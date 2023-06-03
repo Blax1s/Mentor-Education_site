@@ -1,101 +1,53 @@
-* {
-    padding: 0;
+*{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-::-moz-selection { 
-    color: #fff;
-    background: #000;
-  }
-  
-  ::selection {
-    color: #fff;
-    background: #000;
-  }
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+}
 
 body {
-    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 50px;
+}
+
+.video {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 10px 3px rgba(191, 192, 241, 0.315);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-image: url("./assets/signbg.png");
-    background-size: cover;
+    align-items: center;
 }
 
-.welcome{
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
 
-.form {
-    border: 3px solid black;
-    width: 20rem;
-    background-color: #79ffa1;
-    background: linear-gradient(0deg, #57ff8a, rgb(151, 255, 220));
-    border-radius: 1rem;
-    padding: 2rem;
-}
-
-label {
-    display: none;
-}
-
-input {
-    padding: 0 5px;
-    width: 16rem;
-    background: none;
-    border: none;
-    margin-bottom: 10px;
-    line-height: 2.4em;
-    color: #000;
-    font-family: roboto;
-    font-weight: 400;
-    letter-spacing: 0.02rem;
-    font-size: 1.2rem;
-    border-bottom: 2px solid #000;
-}
-
-input:focus {
+select {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
     outline: none;
-}
+    box-shadow: 0 0 10px 3px rgba(191, 192, 241, 0.315);
+    /* border: 1px solid black; */
 
-button {
-    width: 100%;
-    cursor: pointer;
-    background: none;
-    background: rgb(0, 0, 0);
-    border-radius: 25px;
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-family: roboto;
-    font-weight: 300;
-    line-height: 2.5em;
-    margin: 20px 0;
-}
+    margin-bottom: 20px;
 
-button:hover {
-    transform:translateY(3px);
-}
 
-.si{
-    text-align: center;
-}
-
-p{
-    font-size: 1.2rem;
-    font-family: roboto;
-    font-weight: 400;
-}
-
-a{
-    font-size: 1.1rem;
-    font-family: roboto;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.5);;
-}
-
-a:hover{
-    color: black
 }

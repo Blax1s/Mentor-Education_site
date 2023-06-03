@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="favicon.jpeg" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    body,
+    html {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    body {
+        display: grid;
+        place-items: center;
+        padding: 20px;
+    }
+    
+    .videos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-top: 50px;
+    }
+    
+    .video {
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        /* border: 1px solid black; */
+        box-shadow: 0 0 10px 3px rgba(191, 192, 241, 0.315);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    select {
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: 0 0 10px 3px rgba(191, 192, 241, 0.315);
+        /* border: 1px solid black; */
+    
+        margin-bottom: 20px;
+    
+    
+    }
+
+</style>
+
+
+
+
+
+
+</head>
+<body>
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+    
+          <h1 class="logo me-auto"><a href="#">Student Dashboard</a></h1>
+          
+    
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+              <li><a class="active" href="index.html">Home</a></li>
+              
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+          <span style="padding-left: 10vw; font-weight: bold ">User<img src="user.png" height="40px" style="padding-left: 1vw; border-radius: 100%; border-color: black;" ></span>
+          <a href="courses.html" class="get-started-btn">Get Started</a>
+    
+        </div>
+      </header>
+
+
+
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Learning Today,<br>Leading Tomorrow</h1>
+      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <a href="courses.html" class="btn-get-started">Get Started</a>
+    </div>
+  </section>
+
+
+
+
+
+
+  <select name="topic" id="topics">
+
+  </select>
+
+
+  <div class="videos">
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer -->
+      <footer id="footer">
+
+    
+        <div class="container d-md-flex py-4">
+    
+          <div class="me-md-auto text-center text-md-start">
+            <div class="copyright">
+              &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+              
+              Designed by <a href="">Byte Busters</a>
+            </div>
+          </div>
+          <div class="social-links text-center text-md-right pt-3 pt-md-0">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+      <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+    
+      <!-- Template Main JS File -->
+      <script src="assets/js/main.js"></script>
+
+
+
+
+
+
+
+      <script>
+
+
+        let videos = [
+            {
+                title: "Introduction to HTML",
+                url: "https://www.youtube.com/embed/7e90gBu4pas",
+                tag: "html"
+            },
+            {
+                title: "Introduction to CSS",
+                url: "https://www.youtube.com/embed/1Rs2ND1ryYc",
+                tag: "css"
+            },
+            {
+                title: "JavaScript Basics",
+                url: "https://www.youtube.com/embed/fju9ii8YsGs",
+                tag: "javascript"
+            },
+            {
+                title: "Responsive Web Design",
+                url: "https://www.youtube.com/embed/srvUrASNj0s",
+                tag: "css"
+            },
+            {
+                title: "Node.js Tutorial",
+                url: "https://www.youtube.com/embed/TlB_eWDSMt4",
+                tag: "nodejs"
+            },
+            {
+                title: "React.js Crash Course",
+                url: "https://www.youtube.com/embed/sBws8MSXN7A",
+                tag: "react"
+            },
+            {
+                title: "Vue.js Tutorial",
+                url: "https://www.youtube.com/embed/4deVCNJq3qc",
+                tag: "vue"
+            },
+            {
+                title: "Python for Beginners",
+                url: "https://www.youtube.com/embed/_Z1eLJJLQTY",
+                tag: "python"
+            },
+            {
+                title: "Java Programming Tutorial",
+                url: "https://www.youtube.com/embed/eIrMbAQSU34",
+                tag: "java"
+            },
+            {
+                title: "C++ Programming Tutorial",
+                url: "https://www.youtube.com/embed/vLnPwxZdW4Y",
+                tag: "c++"
+            },
+            {
+                title: "PHP Tutorial",
+                url: "https://www.youtube.com/embed/OK_JCtrrv-c",
+                tag: "php"
+            },
+            {
+                title: "JavaScript Tutorial 12",
+                url: "https://www.youtube.com/embed/efg123",
+                tag: "javascript"
+            },
+            {
+                title: "JavaScript Tutorial 13",
+                url: "https://www.youtube.com/embed/hij456",
+                tag: "javascript"
+            },
+            {
+                title: "JavaScript Tutorial 14",
+                url: "https://www.youtube.com/embed/klm789",
+                tag: "javascript"
+            },
+            {
+                title: "JavaScript Tutorial 15",
+                url: "https://www.youtube.com/embed/nop012",
+                tag: "javascript"
+            }
+        ];
+
+
+        // all topics
+        function getAllTopicFromVideos() {
+            let allTopics = [];
+            for (let i = 0; i < videos.length; i++) {
+                let video = videos[i];
+                let tag = video.tag;
+                if (!allTopics.includes(tag)) {
+                    allTopics.push(tag);
+                }
+            }
+            return allTopics;
+        }
+
+        getAllTopicFromVideos();
+
+
+        window.addEventListener('load', () => {
+            let topics = getAllTopicFromVideos();
+            let select = document.querySelector('#topics');
+            for (let i = 0; i < topics.length; i++) {
+                let option = document.createElement('option');
+                option.value = topics[i];
+                option.innerText = topics[i];
+                select.appendChild(option);
+            }
+
+
+            select.addEventListener('change', () => {
+                let selectedTopic = select.value;
+                let filteredVideos = videos.filter((video) => {
+                    return video.tag === selectedTopic;
+                });
+
+                document.querySelector('.videos').innerHTML = '';
+
+                filteredVideos?.forEach(() => {
+                    let video = document.createElement('div');
+                    video.classList.add('video');
+                    video.innerHTML = `
+                        <iframe width="100%" height="100%" src="${filteredVideos[0].url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h3>${filteredVideos[0].title}</h3>
+                    `;
+                    document.querySelector('.videos').appendChild(video);
+                })
+            })
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
