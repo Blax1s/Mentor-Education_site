@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            padding: 20px;
+        }
+
+        .videos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 10px;
+            row-gap: 10px;
+            margin-top: 50px;
+        }
+
+        .video {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            /* border: 1px solid black; */
+            box-shadow: 0 0 10px 3px rgba(191, 192, 241, 0.315);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        select {
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            outline: none;
+            box-shadow: 0 0 10px 3px rgba(191, 192, 241, 0.315);
+            /* border: 1px solid black; */
+
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <select name="topic" id="topics">
+
+    </select>
+
+
+    <div class="videos">
+    </div>
+
+
+
+
+    <script>
+
+
+        let videos = [
+            {
+                title: "Introduction to HTML",
+                url: "https://www.youtube.com/embed/7e90gBu4pas",
+                tag: "html"
+            },
+            {
+                title: "Introduction to CSS",
+                url: "https://www.youtube.com/embed/1Rs2ND1ryYc",
+                tag: "css"
+            },
+            {
+                title: "JavaScript Basics",
+                url: "https://www.youtube.com/embed/fju9ii8YsGs",
+                tag: "javascript"
+            },
+            {
+                title: "Responsive Web Design",
+                url: "https://www.youtube.com/embed/srvUrASNj0s",
+                tag: "css"
+            },
+            {
+                title: "Node.js Tutorial",
+                url: "https://www.youtube.com/embed/TlB_eWDSMt4",
+                tag: "nodejs"
+            },
+            {
+                title: "React.js Crash Course",
+                url: "https://www.youtube.com/embed/sBws8MSXN7A",
+                tag: "react"
+            },
+            {
+                title: "Vue.js Tutorial",
+                url: "https://www.youtube.com/embed/4deVCNJq3qc",
+                tag: "vue"
+            },
+            {
+                title: "Python for Beginners",
+                url: "https://www.youtube.com/embed/_Z1eLJJLQTY",
+                tag: "python"
+            },
+            {
+                title: "Java Programming Tutorial",
+                url: "https://www.youtube.com/embed/eIrMbAQSU34",
+                tag: "java"
+            },
+            {
+                title: "C++ Programming Tutorial",
+                url: "https://www.youtube.com/embed/vLnPwxZdW4Y",
+                tag: "c++"
+            },
+            {
+                title: "PHP Tutorial",
+                url: "https://www.youtube.com/embed/OK_JCtrrv-c",
+                tag: "php"
+            },
+            {
+                title: "JavaScript Tutorial 12",
+                url: "https://www.youtube.com/embed/efg123",
+                tag: "javascript"
+            },
+            {
+                title: "JavaScript Tutorial 13",
+                url: "https://www.youtube.com/embed/hij456",
+                tag: "javascript"
+            },
+            {
+                title: "JavaScript Tutorial 14",
+                url: "https://www.youtube.com/embed/klm789",
+                tag: "javascript"
+            },
+            {
+                title: "JavaScript Tutorial 15",
+                url: "https://www.youtube.com/embed/nop012",
+                tag: "javascript"
+            }
+        ];
+
+
+        // all topics
+        function getAllTopicFromVideos() {
+            let allTopics = [];
+            for (let i = 0; i < videos.length; i++) {
+                let video = videos[i];
+                let tag = video.tag;
+                if (!allTopics.includes(tag)) {
+                    allTopics.push(tag);
+                }
+            }
+            return allTopics;
+        }
+
+        getAllTopicFromVideos();
+
+
+        window.addEventListener('load', () => {
+            let topics = getAllTopicFromVideos();
+            let select = document.querySelector('#topics');
+            for (let i = 0; i < topics.length; i++) {
+                let option = document.createElement('option');
+                option.value = topics[i];
+                option.innerText = topics[i];
+                select.appendChild(option);
+            }
+
+
+            select.addEventListener('change', () => {
+                let selectedTopic = select.value;
+                let filteredVideos = videos.filter((video) => {
+                    return video.tag === selectedTopic;
+                });
+
+                document.querySelector('.videos').innerHTML = '';
+
+                filteredVideos?.forEach(() => {
+                    let video = document.createElement('div');
+                    video.classList.add('video');
+                    video.innerHTML = `
+                        <iframe width="100%" height="100%" src="${filteredVideos[0].url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h3>${filteredVideos[0].title}</h3>
+                    `;
+                    document.querySelector('.videos').appendChild(video);
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
